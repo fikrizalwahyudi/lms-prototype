@@ -1,0 +1,103 @@
+<div class="header bg-gradient-default pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+      </div>
+    </div>
+  </div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-12 order-xl-12">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Create User</h3>
+            </div>
+            <div class="col-4 text-right">
+              <a href="#!" [routerLink]="['/users']" class="btn btn-sm btn-primary">Back</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="fg" (ngSubmit)="save()">
+            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">First name</label>
+                    <input formControlName="firstName" type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" >
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">Last name</label>
+                    <input formControlName="lastName" type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" >
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-first-name">Position</label>
+                      <input formControlName="position" type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" >
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name">Gender</label>
+                      <div class="custom-control custom-radio mb-3">
+                          <input formControlName="gender" value="male" name="gender" class="custom-control-input" id="customRadio5" type="radio">
+                          <label class="custom-control-label" for="customRadio5">Male</label>
+                        </div>
+                        <div class="custom-control custom-radio mb-3">
+                          <input formControlName="gender" value="female" name="gender" class="custom-control-input" id="customRadio6" checked="" type="radio">
+                          <label class="custom-control-label" for="customRadio6">Female</label>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Address -->
+            <h6 class="heading-small text-muted mb-4">Account information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email address</label>
+                    <input  formControlName="email" type="email" id="input-email" class="form-control form-control-alternative " placeholder="jesse@example.com">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                      <label class="form-control-label" for="input-email">Role</label>
+                      <ngx-select formControlName="role"  [items]="items"  [placeholder]="'Pilih Role'"></ngx-select>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- <hr class="my-4" /> -->
+            <!-- Description -->
+            <!-- <h6 class="heading-small text-muted mb-4">About me</h6> -->
+            <div class="pl-lg-4">
+              <div class="form-group">
+                <label>Note</label>
+                <textarea formControlName="note" rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                    <button class="btn btn-default" type="button">Cancel</button>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
